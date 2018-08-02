@@ -86,7 +86,7 @@ namespace HAnX_RemoteConnect
                 }
                 return sysPortId;
             } else {
-                return 0;
+                return sysPortId;
             }
         }
     }

@@ -16,7 +16,7 @@ namespace HAnX_RemoteConnect
             int serverPort;
             string uMenuInput;
 
-            byte[] streamData = new byte[1024];
+            byte[] streamData = new byte[20480];
             string userInput, stringData;
             TcpClient haxServer;
 
