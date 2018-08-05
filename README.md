@@ -9,7 +9,8 @@ DOWNLOAD THE LATEST FROM RELEASES!
 2) Chose the first option to enter your switch's IP Address and port
 3) Wait for it to let you know it is connected
 4) Enter commands as listed on the sys-netcheat github page
-5) Profit!
+5) There may be points where the client is waiting on the server to send data - you may have to enter something into the console and hit enter for it to continue.
+6) Profit!
 
 A UI with address saving and more memory editor like features is planned (some things may be limited on the sys-netcheat end, but jakibaki has made a pretty freakin great sys module so make sure to give him thanks!).
 
@@ -26,6 +27,20 @@ Gaining sentience and hunting Sarah Connor
 
 Changelog:
 
+V 1.2.0 -- 8/4/2018
+Fixed Issues
+  -- Actually works now!
+  -- Actually tested and debuged for sys-netcheat!
+  -- Faster than before!
+  -- Less change of stupid failure!
+
+New
+  -- Added classes to start on V2 update (Async, address saving, GUI)
+ 
+Known Issues To be Fixed In V2
+  -- May show an input ">>" during a search, this means the server is sending a piece that the client didn't see yet. Just enter  anything and hit enter and it will continue.
+  -- Probably some real weird stuff.
+  
 V 1.00 -- 7/30/2018
 
 Created first version
