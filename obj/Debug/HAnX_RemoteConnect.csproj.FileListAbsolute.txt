@@ -4,3 +4,9 @@ c:\users\travis\documents\visual studio 2015\Projects\HAnX_RemoteConnect\HAnX_Re
 c:\users\travis\documents\visual studio 2015\Projects\HAnX_RemoteConnect\HAnX_RemoteConnect\obj\Debug\HAnX_RemoteConnect.csprojResolveAssemblyReference.cache
 c:\users\travis\documents\visual studio 2015\Projects\HAnX_RemoteConnect\HAnX_RemoteConnect\obj\Debug\HAnX_RemoteConnect.exe
 c:\users\travis\documents\visual studio 2015\Projects\HAnX_RemoteConnect\HAnX_RemoteConnect\obj\Debug\HAnX_RemoteConnect.pdb
+C:\Users\Travis\Documents\GitHub\HAnX-Remote-Client\bin\Debug\HAnX_RemoteConnect.exe.config
+C:\Users\Travis\Documents\GitHub\HAnX-Remote-Client\bin\Debug\HAnX_RemoteConnect.exe
+C:\Users\Travis\Documents\GitHub\HAnX-Remote-Client\bin\Debug\HAnX_RemoteConnect.pdb
+C:\Users\Travis\Documents\GitHub\HAnX-Remote-Client\obj\Debug\HAnX_RemoteConnect.csproj.CoreCompileInputs.cache
+C:\Users\Travis\Documents\GitHub\HAnX-Remote-Client\obj\Debug\HAnX_RemoteConnect.exe
+C:\Users\Travis\Documents\GitHub\HAnX-Remote-Client\obj\Debug\HAnX_RemoteConnect.pdb

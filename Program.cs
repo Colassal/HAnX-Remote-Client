@@ -16,7 +16,7 @@ namespace HAnX_RemoteConnect
             int serverPort;
             string uMenuInput;
 
-            byte[] streamData = new byte[20480];
+            byte[] streamData = new byte[102400];
             string userInput, stringData;
             TcpClient haxServer;
 
@@ -56,22 +56,59 @@ namespace HAnX_RemoteConnect
                     int recv = hackNs.Read(streamData, 0, streamData.Length);
                     stringData = Encoding.ASCII.GetString(streamData, 0, recv);
                     Console.WriteLine(stringData);
+                    bool uInCheck = false;
 
                     while(true)
                     {
-                        userInput = Console.ReadLine().ToUpper();
+                        System.Threading.Thread.Sleep(100);
 
-                        if (userInput == "EXIT")
-                            break;
-
-                        hackNs.Write(Encoding.ASCII.GetBytes(userInput), 0, userInput.Length);
-                        hackNs.Flush();
-
-                        streamData = new byte[1024];
+                        streamData = new byte[102400];
                         recv = hackNs.Read(streamData, 0, streamData.Length);
                         stringData = Encoding.ASCII.GetString(streamData, 0, recv);
                         Console.WriteLine(stringData);
+                       
 
+
+                        System.Threading.Thread.Sleep(100);
+
+                        if(!hackNs.DataAvailable)
+                        {
+                            while(true)
+                            {
+                                Console.WriteLine(">> ");
+                                System.Threading.Thread.Sleep(16);
+                                if (!hackNs.DataAvailable)
+                                {
+                                    userInput = Console.ReadLine();
+                                    if (userInput.Length > 0)
+                                    {
+                                        uInCheck = true;
+                                        break;
+                                    }
+                                        
+                                } else
+                                {
+                                    userInput = "";
+                                    uInCheck = false;
+                                    break;
+                                }
+                                
+                            }
+
+                            if(uInCheck)
+                            {
+                                if (userInput.ToUpper() == "EXIT")
+                                    break;
+                                hackNs.Write(Encoding.ASCII.GetBytes(userInput), 0, userInput.Length);
+                                hackNs.Flush();
+                            }
+                        }
+                        /*
+                        streamData = new byte[102400];
+                        recv = hackNs.Read(streamData, 0, streamData.Length);
+                        stringData = Encoding.ASCII.GetString(streamData, 0, recv);
+                        Console.WriteLine(stringData);
+                        */
                     }
                     Console.WriteLine("Disconnecting From Server...");
                     hackNs.Flush();
@@ -120,6 +157,24 @@ namespace HAnX_RemoteConnect
             }
         }
 
+        public static string Right(string sValue, int iMaxLength)
+        {
+            //Check if the value is valid
+            if (string.IsNullOrEmpty(sValue))
+            {
+                //Set valid empty string as string could be null
+                sValue = string.Empty;
+            }
+            else if (sValue.Length > iMaxLength)
+            {
+                //Make the string no longer than the max length
+                sValue = sValue.Substring(sValue.Length - iMaxLength, iMaxLength);
+            }
+
+            //Return the string
+            return sValue;
+        }
+
         public static int getServerPort()
         {
             int svcPort;
@@ -142,5 +197,8 @@ namespace HAnX_RemoteConnect
                 }
             }
         }
+
+
     }
+
 }

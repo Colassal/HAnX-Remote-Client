@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System;
 using System.Threading.Tasks;
 
 namespace HAnX_RemoteConnect
@@ -27,7 +28,7 @@ namespace HAnX_RemoteConnect
         public static void MenuOptions(int optionCount, List<string> options) {
             // Prints out each item in the list to the screen with it's index + 1 as the choice #
             for(var i = 0; i < optionCount; i++) {
-                v = i + 1;
+                int v = i + 1;
                 Console.WriteLine("Enter " + v.ToString() + ") " + options.ElementAt(i));
             }
         }
@@ -36,17 +37,18 @@ namespace HAnX_RemoteConnect
         public static int MenuSelectNumber() {
             int retVal = 0;
             try {
-                retVal = Console.ReadLine().ToInt32();
+                retVal = Convert.ToInt32(Console.ReadLine());
                 return retVal;
             } catch {
                 //I'm to bad at coding, and too lazy to create a proper catch - have fun
                 Console.WriteLine("NOT AN INTEGER - CRASHING.");
             }
+            return 0;
         }
 
         // Processes Yes Or No Input as bool 
-        public static string MenuSelectBool(){
-            string confirmInput = console.ReadLine().ToUpper();
+        public static bool MenuSelectBool(){
+            string confirmInput = Console.ReadLine().ToUpper();
             if(confirmInput == "Y" || confirmInput == "YES") {
                 return true;
             } else if (confirmInput == "N" || confirmInput == "NO") {
@@ -62,7 +64,7 @@ namespace HAnX_RemoteConnect
             SysHeader(true);
             Console.WriteLine("Enter Your Switch IP Address:");
             sysIpAddress = Console.ReadLine();
-            Console.WriteLine("Is " + sysIpAddress " Correct? Y/N")
+            Console.WriteLine("Is " + sysIpAddress + " Correct? Y/N");
             if(MenuSelectBool()) {
                 return sysIpAddress;
             } else {
@@ -75,7 +77,7 @@ namespace HAnX_RemoteConnect
             int sysPortId = 0;
             SysHeader(true);
             Console.WriteLine("Enter Your Switch Port (Default 5555):");
-            sysPort = console.ReadLine();
+            sysPort = Console.ReadLine();
             Console.WriteLine("Is " + sysPort + " Correct? Y/N");
             if(MenuSelectBool()) {
                 try {
